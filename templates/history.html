@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<table>
+    <thead>
+         <td colspan="5">Symbol</td>
+          <td colspan="5">Shares</td>
+           <td colspan="5">Date</td>
+           <td colspan="5">Time</td>
+            <td colspan="5">Cost</td>
+            <td colspan="5">Mode</td>
+    </thead>
+    {% for item in transactions %}
+        <tr>
+        {% for key,value in item.items() %}
+            {% if key != "id" %}
+                <td>{{ value }}</td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
